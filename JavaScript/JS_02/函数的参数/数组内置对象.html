@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组内置对象</title>
+    <script type="text/javascript">
+        var array=['apple','香蕉',19.18,{'name':'yum'}];
+        array.push('ins'); //数组追加元素
+        array['城市']='西安'; //通过索引添加元素,索引可以是字符串和数字
+        array[100]='Mongo'; //此时length变为101，因为长度是以数字索引+1计算的
+        alert(array.length);
+        for(var key in array){
+            alert(key+'----'+array[key])
+        }
+        alert('第一次弹出元素：'+array.pop()); //pop只弹出数字索引的元素，Mongo
+        alert('第二次弹出元素：'+array.pop()); //undefined
+        alert('第三次弹出元素：'+array.pop()); //undefined
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

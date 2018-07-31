@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>停止事件冒泡</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $('#inner').bind('click',function(evt){
+            alert('内部块元素被点击');
+            evt.stopPropagation()   //停止事件冒泡
+        })
+    </script>
+</head>
+<body>
+<div id="outer" style="width: 200px; height: 200px; background-color: orangered">
+    <div id="inner" style="width: 100px; height: 100px; background-color:green"></div>
+</div>
+</body>
+</html>

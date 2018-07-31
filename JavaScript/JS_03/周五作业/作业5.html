@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击第一个div复制内容到第二个div</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#a").click(function () {
+                var a=$("#a").html();
+                alert(typeof a);
+                $("#b")[0].innerHTML='复制first("'+a+'")';
+            });
+        });
+    </script>
+</head>
+<body>
+div1：<div id="a" style="width: 600px; height: 30px; background-color: darkcyan">first</div>
+<br>
+div2：<div id="b"  style="width: 600px; height: 30px; background-color: olivedrab"></div>
+</body>
+</html>

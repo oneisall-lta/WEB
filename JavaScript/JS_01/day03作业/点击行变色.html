@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table表格点击变换行颜色</title>
+    <style type="text/css">
+      table{
+          background-color: whitesmoke;
+      }
+    </style>
+    <script type="text/javascript">
+        function changeBgc() {
+            var rows=document.getElementById('data').getElementsByTagName('tr');
+            // alert(rows.length);
+            for(var i=0;i<rows.length;i++){
+                rows[i].onclick=function () {
+                    for(var j=0;j<rows.length;j++){
+                        rows[j].style.backgroundColor='white';
+                    }
+                    this.style.backgroundColor='red';
+                }
+            }
+        }
+        // 当浏览器加载完网页的时候，执行绑定的函数
+        window.onload=function () {
+            changeBgc();
+        };
+
+
+    </script>
+</head>
+<body>
+<table border="1" cellspacing="0" width="200">
+    <thead>
+        <tr onclick="click(this)">
+            <th>good</th>
+            <th>price</th>
+            <th>cnt</th>
+        </tr>
+    </thead>
+    <tbody id="data">
+        <tr onclick="">
+            <td>Apple</td>
+            <td>15</td>
+            <td>10</td>
+        </tr>
+        <tr onclick="">
+            <td>Mongo</td>
+            <td>20</td>
+            <td>30</td>
+        </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

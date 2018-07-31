@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <script type="text/javascript">
+
+        var date=new Date();
+
+        alert(date);
+        var hour=date.getHours();
+
+        if (hour<12){
+            alert("早上好")
+        }else if(hour<=18 && hour>=12){
+            alert("下午好")
+        }else {
+            alert("晚上好")
+        }
+    </script>
+</head>
+<body>
+<!--4.根据Date判断当前时间，如果小于12点，则显示
+  “早上好”，如果在12点到18点之间则显示“下午好”，
+   超过18点则显示“晚上好”。-->
+
+</body>
+</html>

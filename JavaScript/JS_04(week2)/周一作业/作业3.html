@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动div</title>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#mydiv').click(function () {
+
+                $('#mydiv').animate({
+                    'left':'200px',
+                    'width':'300px',
+                    'height':'300px',
+                    'top':'200px'
+                },5000,function () {
+                    $(this).css('background-color','lightblue')
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="mydiv" style="width: 100px;height: 100px;border: 1px solid orangered; position: relative;" >昨天空调有点冷啊！</div>
+</body>
+</html>

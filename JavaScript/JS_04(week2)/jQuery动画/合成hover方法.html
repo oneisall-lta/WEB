@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合成hover方法</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#mydiv').css({
+                'width': '200px',
+                'height': '200px',
+                'background-color': 'green'
+            }).hover(function () {
+                $(this).css('background-color', '#aabbcc');
+            }, function () {
+                $(this).css('background-color', '#ddeeff')
+            })
+        })
+    </script>
+
+</head>
+<body>
+<div id="mydiv"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>研究jsonp原理</title>
+    <script type="text/javascript">
+        function fruit(obj) {
+            alert(obj['name']);
+            document.write(obj.name);
+            document.write(obj['name']);
+        }
+    </script>
+    <!--引用跨域脚本可行，跨域post提交不可以-->
+    <script type="text/javascript" src="b.js"></script>
+</head>
+<body>
+
+</body>
+</html>

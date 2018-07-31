@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的ajax的post请求</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        function getWeatherInfo(c) {
+            $.post("http://wthrcdn.etouch.cn/weather_mini",
+                {'city': c},
+                function (data) { //匿名函数
+                    console.log(data);
+                    // alert(typeof data);
+                    var array=data['data']['forecast'];
+                    var result='';
+                    for(var index in array){
+                        result+=array[index]['date']+'<br/>';
+                        result+=array[index]['high']+'<br/>';
+                        result+='<hr/>';
+                    }
+                    $('div#mydiv').html(result)
+                },
+                'jsonp' //服务器返回的响应如函数名(obj)，调用本地函数getWeatherInfo()
+            );
+        }
+    </script>
+</head>
+<body>
+请输入查询的城市信息：<input type="text" id="city">
+<input type="button" value='点击查询天气信息'
+       onclick="getWeatherInfo(document.getElementById('city').value)"/>
+<div id="mydiv"></div>
+</body>
+</html>

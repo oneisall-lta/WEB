@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜数字</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            var nums=[2,3,4,5];
+            var btn=document.getElementById('guessBtn');
+            btn.onclick=function () {
+                var guess=prompt('请输入猜测的数字：');
+                // if(guess in num){  // in 返回的是索引
+                //     alert('Bingo')
+                var guessNum=parseInt(guess);
+                var flag=true;
+                for(var key in nums){
+                    if(guessNum==nums[key]){
+                        alert('Bingo');
+                        flag=false;
+                        break
+                    }
+                }
+                if(flag){
+                    alert('抱歉没有此数字')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="guessBtn" type="button" value="猜数字"/>
+</body>
+</html>

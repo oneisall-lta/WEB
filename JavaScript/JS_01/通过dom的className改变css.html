@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过dom的className改变css</title>
+    <style type="text/css">
+        .firstClass{
+            background-color: blanchedalmond;
+            color: blueviolet;
+            font-size: 20px;
+            font-style: italic;
+            background-image: url(a.jpg);
+
+        }
+        .secondClass{
+            background-color: whitesmoke;
+            color: powderblue;
+            font-style: italic;
+            font-size: 20px;
+            background-image: url(WEB/images/d.jpg);  // 相对WEB路径
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script type="text/javascript">
+        var flag = true;
+        function changeCss(dom) {
+            if(flag){
+                dom.className='firstClass';
+                flag=false;
+            }else{
+                dom.className='secondClass';
+                flag=true;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="mydiv" style="height: 300px;width: 300px;background-color:lightgrey;"
+onclick="changeCss(this)">Principle</div>
+
+</body>
+</html>

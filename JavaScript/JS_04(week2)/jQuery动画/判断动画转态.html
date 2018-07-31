@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断动画状态</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#btn').click(function () {
+                var $mydiv=$('#mydiv');
+                if($mydiv.is(':animated')){  //选择所有正在执行动画效果的元素.
+                    $mydiv.stop();
+                    $(this).text('点击运动')
+                }else {
+                    $mydiv.animate({
+                        'left':'+=200px'
+                    },3000);
+                    $(this).text('点击停止');
+                }
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <button id="btn">点击运动</button>
+    <div id="mydiv" style="width: 100px; height: 100px; background-color: #abcdef; position: relative;"></div>
+</body>
+</html>

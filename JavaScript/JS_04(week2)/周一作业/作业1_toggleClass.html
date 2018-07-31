@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toggleClass</title>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <style type="text/css">
+        .myclass{
+            background-color: orangered;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $('tbody>tr').hover(function () {
+                $(this).toggleClass('myclass')
+            })
+        })
+    </script>
+</head>
+<body>
+<table style="border: 1px solid blue ;  width: 260px" cellspacing="0" cellpadding="10">
+    <thead>
+    <tr>
+        <th>品种</th>
+        <th>数量</th>
+        <th>价格</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Apple</td>
+            <td>20</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Mongo</td>
+            <td>15</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>Banana</td>
+            <td>10</td>
+            <td>15</td>
+        </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

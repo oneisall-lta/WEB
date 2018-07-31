@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择复选框</title>
+	<script type="text/javascript">
+	    function checkAll(obj){
+            if(obj.checked){   // 判断全选复选框是否被选中
+                var jobs=document.getElementsByName("job");  // 通过name属性选择一组复选框
+                for(var i=0;i<jobs.length;i++){   // 遍历所有的工作
+                     jobs[i].checked=true;
+                }
+            }
+	    }
+
+	    function jobCheck(obj){
+	    	var all=document.getElementById("all");  // 全选复选框DOM
+	    	var jobs=document.getElementsByName("job");  // 选择所有的工作DOM对象
+	    	var flag=true;
+            if(obj.checked){
+                for(var i=0;i<jobs.length;i++){   // 遍历所有工作DOM对象
+                     if(!jobs[i].checked){    // 如果有一个工作DOM没有被选中
+                     	  flag=false;
+                          break;   // 跳出循环
+                     }
+                }
+                if(flag){
+                	all.checked=true;
+                }else{
+                	all.checked=false;
+                }
+            }else{
+               all.checked=false;
+            }
+	    }
+
+	    window.onload=function () {
+	        var rev=document.getElementById('reverse');
+	        var jobs=document.getElementsByName('job');
+	        // var all=document.getElementById('all');
+            rev.onchange=function () {
+	            if(this.checked){
+	                for(var i=0;i<jobs.length;i++){
+	                    jobs[i].checked=!jobs[i].checked
+                    }
+                }
+            }
+        }
+
+	</script>
+</head>
+<body>
+	<input type="checkbox" name="job" onchange="jobCheck(this)"> 百度  <br/>
+	<input type="checkbox" name="job" onchange="jobCheck(this)"> 腾讯  <br/>
+	<input type="checkbox" name="job" onchange="jobCheck(this)"> 阿里巴巴  <br/>
+	<input type="checkbox" name="job" onchange="jobCheck(this)"> 网易  <br/>
+	<input type="checkbox" name="job" onchange="jobCheck(this)"> 360  <br/>
+	<input type="checkbox" id="all" onchange="checkAll(this)"/> 全选
+	<input type="checkbox" id="reverse" onchange="checkAll(this)"/> 反选
+</body>
+</html>

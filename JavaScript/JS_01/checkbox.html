@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox</title>
+    <script type="text/javascript">
+        function checkAll(obj) {
+            if(obj.checked){  //判断全选复选框是否被选中
+                var jobs=document.getElementsByName('job'); //通过name获取一组复选框
+                for(var i=0; i<jobs.length;i++){
+                    jobs[i].checked=true;
+                }
+            }
+        }
+        function jobCheck(obj) {
+            var all = document.getElementById('all');
+            var jobs = document.getElementsByName('job');
+            var flag=true;  //定义了标识位
+            console.log(jobs);
+            if(obj.checked){
+                for(var i=0;i<jobs.length;i++){  //遍历所有工作
+                    if(!jobs[i].checked){  //如果有一个DOM未被选中
+                        flag=false;
+                       break; //跳出循环
+                    }
+                }
+                if(flag){
+                    all.checked=true;
+                }else{
+                    all.checked=false
+                }
+            }else{
+                all.checked=false
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="job" onchange="jobCheck(this)">百度<br/>
+    <input type="checkbox" name="job" onchange="jobCheck(this)">腾讯<br/>
+    <input type="checkbox" name="job" onchange="jobCheck(this)">阿里<br/>
+    <input type="checkbox" name="job" onchange="jobCheck(this)">网易<br/>
+    <input type="checkbox" id="all" onchange="checkAll(this)"/>全选
+
+</body>
+</html>

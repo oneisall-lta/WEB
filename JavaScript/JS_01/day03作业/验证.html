@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            var btn=document.getElementById('btn');
+            btn.onclick=function () {
+                var username=document.getElementById('username').value;
+                var pwd=document.getElementById('password').value;
+                if(username=='张三' && pwd=='1234'){
+                    alert('验证成功')
+                }else {
+                    alert('验证失败')
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+用户名：<input type="text" name="username" id="username"/><br/>
+密码：<input type="text" name="password" id="password"/><br/>
+<input type="button" id="btn" value="验证"/>
+</body>
+</html>

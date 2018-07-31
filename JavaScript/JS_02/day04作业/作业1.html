@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算圆面积</title>
+    <script type="text/javascript">
+
+        function calculate() {
+            var radius=document.getElementById('circle').value;
+            var s=Math.PI*Math.pow(radius,2);
+            alert(s);
+            document.getElementById('content').value=s.toFixed(4);
+        }
+
+    </script>
+
+
+</head>
+<body>
+<!--1.在第一个文本框中输入圆的半径，点击按钮后在第二个文本框中显示圆的面积。
+-->
+请输入圆的半径：<input type="text" id='circle' name="radius"/><br/>
+圆的面积为：<input type="text" id="content" name="area"><br/>
+<button onclick="calculate()">计算</button>
+<input type="reset">
+</body>
+</html>

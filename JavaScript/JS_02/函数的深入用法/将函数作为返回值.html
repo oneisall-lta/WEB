@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将函数作为返回值</title>
+    <script type="text/javascript">
+        function outer() {
+            var a=1;
+            function inner() {  //内部函数可以访问外部变量
+                return a;
+            }
+            return inner;
+        }
+
+        var x=outer();
+        alert(x())
+    </script>
+</head>
+<body>
+
+</body>
+</html>

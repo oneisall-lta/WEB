@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高阶函数</title>
+    <script type="text/javascript">
+        function func(str,fn) {
+            return fn(str);
+
+        }
+
+
+        function up(s) {
+            return s.toUpperCase();
+        }
+        function lower(s) {
+            return s.toLowerCase();
+        }
+
+        alert(func('helol, oil', up));
+        alert(func('helol, oil', lower));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变password背景</title>
+     <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('input:password').css('background-color','yellow') //官方建议在：前加上标签
+        })
+    </script>
+</head>
+<body>
+<!--2.使用jQuery实现选中所有form下的password密码框，
+  并改变其背景色为黄色。（该页面有两个form表单。）-->
+
+<form method="post" action="searchURL">
+    用户名： <input type="text" name="username" value=""><br/>
+    密&emsp;码： <input type="password" placeholder="请输入密码" name='password1' class="pwd"/><br/>
+</form>
+<hr>
+<form method="post" action="searchURL2">
+    用户名：<input  type="text" name="username" value=""><br/>
+    密&ensp;&ensp;码：<input type="password" placeholder="请输入密码" name="password" class="pwd">
+</form>
+
+
+
+</body>
+</html>

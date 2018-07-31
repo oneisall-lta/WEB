@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        function sum() {
+            var a=$('#a1').val();
+            var b=$('#a2').val();
+            var result=a*1+b*1;
+            $('#rt').val(result);
+        }
+    </script>
+</head>
+<body>
+<input type="text" id='a1' name="数字1" placeholder="请输入任意数字">+
+<input type="text" id='a2' name="数字2" placeholder="请输入任意数字">
+<input type="button" value="=" onclick="sum()">
+<input type="text" id='rt' name="结果">
+</body>
+</html>

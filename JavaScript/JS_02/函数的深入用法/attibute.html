@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将函数赋值给对象的属性</title>
+    <script type="text/javascript">
+        var stu={'name':'tome',age:20,score:90};
+        stu.learn=function () {
+            return this.name+'正在学习……';
+        };
+        for(var key in stu){
+            alert(key+'-----'+stu[key])
+        }
+        alert(stu.learn());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生js代码实现Ajax加载天气信息</title>
+    <script type="text/javascript">
+        function getXHR() {  //该函数获取Ajax对象
+            var xhr = null;
+            if (window.XMLHttpRequest) {  //判断浏览器支持XMLHttpRequest对象
+                xhr = new XMLHttpRequest();
+            } else {
+                xhr = new ActiveXObject('Microsoft.XMLHTTP'); //老版IE浏览器支持的Ajax对象
+            }
+            return xhr;
+        }
+
+        function getWeatherInfo(c) { //使用Ajax异步加载天气信息
+            xhr = getXHR();  //获取Ajax对象
+            xhr.open('get', 'http://wthrcdn.etouch.cn/weather_mini?city=' + c, true); //true是否异步
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState==4) {
+                    if(xhr.status==200){
+                        var info=xhr.responseText; //接收服务器响应的信息
+                        // alert(typeof info);  string
+                        var jsonObj=JSON.parse(info); //将json字符串转换成js对象
+                        var array=jsonObj.data.forecast;
+                        // alert(typeof array); object
+                        var result='';
+                        for(index in array){
+                            var day_weather=array[index];
+                            var date=day_weather.date;
+                            var high=day_weather.high;
+                            var fe=day_weather.fengli;
+                            // alert(fe.lastIndexOf("["));  //返回8
+                            var feng= fe.substr(fe.lastIndexOf('[')+1).replace(']]>','');
+                            result+=feng+'<br/>';
+                            result+=date+"<br/>";
+                            result+=high+"<br/>";
+                            result+=fe+"<br/>";
+                            result+="<hr/>";
+                        }
+                        document.getElementById('mydiv').innerHTML=result;
+                    }
+                }
+            };
+            xhr.send(null);  //发送请求
+        }
+    </script>
+</head>
+<body>
+请输入查询的城市信息：<input type="text" id="city">
+<input type="button" value='点击查询天气信息'
+       onclick="getWeatherInfo(document.getElementById('city').value)"/>
+<div id="mydiv"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止超链接跳转功能</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("a").click(function (evt) {
+                evt.preventDefault();
+            })
+        });
+    </script>
+</head>
+<body>
+<a href="https://www.gushiwen.org">古诗文</a>
+</body>
+</html>

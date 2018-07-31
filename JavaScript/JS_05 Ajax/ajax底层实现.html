@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的Ajax的底层请求天气数据</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        function getWeatherInfo(c) {
+            $.ajax({
+                method:'post',
+                url:'http://wthrcdn.etouch.cn/weather_mini',
+                data:{city:c},
+                beforeSend:function () {
+                    alert('准备发送请求')
+                },
+                success:function (data) {
+                    // alert(typeof data);
+                    // $('#mydiv').append(data);  //将内容追加载到网页中
+
+                    var array=data['data']['forecast'];
+                    var result='';
+                    for(var index in array){
+                        result+=array[index]['date']+'<br/>';
+                        result+=array[index]['high']+'<br/>';
+                        result+='<hr/>';
+                    }
+                    $('div#mydiv').append(result)
+                },
+                error:function () {
+                    alert('发送失败')
+                },
+                dataType:'jsonp',  //期望得到的数据类型，不写的话可能返回是字符串
+                jsonp:'callback'  // jsonp:'abc' ,将callback换为abc,会失败，以为引擎默认callback
+            //   指定的是参数名(默认是callback，由服务器定义），该参数名的值(自动生成)对应回调函数的函数名，在本例中指getWeatherInfo(c)
+            //    jsonp 格式为：jQuery3110002360152338910293_1533025456173('天气信息')
+            })
+        }
+    </script>
+</head>
+<body>
+请输入查询的城市信息：<input type="text" id="city">
+<input type="button" value='点击查询天气信息'
+       onclick="getWeatherInfo(document.getElementById('city').value)"/>
+<div id="mydiv"></div>
+</body>
+</html>

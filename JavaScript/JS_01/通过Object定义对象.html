@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过Object定义对象</title>
+    <script type="text/javascript" src="obj.js"></script>
+    <script type="text/javascript">
+        var obj=newObject('tom',20);
+        // alert(typeof(obj));
+        alert(obj.age);
+        delete obj.name;
+        alert(typeof(obj.name));
+        obj.sex='male';
+        document.write(obj.sex)
+
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>

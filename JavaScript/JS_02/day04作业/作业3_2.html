@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高阶函数</title>
+    <script type="text/javascript">
+        function fn(a,b,f) {
+            return f(a,b)
+        }
+
+        function f(a,b) {
+            return(Math.sqrt(parseInt(a))+Math.sqrt(parseInt(b)));
+        }
+
+        alert(fn('3','13','f'))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

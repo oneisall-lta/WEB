@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取段子信息</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        function getInfo() {
+            $.get('https://www.apiopen.top/satinApi',
+                {'type': 1, 'page': '1'},
+                function (data) {
+                    // alert(typeof data); //返回object,网页返回的数据用data接收
+                    var array = data.data;
+                    // alert(typeof array); //返回object
+                    var result = '';
+                    for (var index in array) {
+
+                        result += array[index]['text'] + '<br/>';
+                        result += '<hr/>';
+                    }
+                    $('div#mydiv').html(result)
+                }, 'json')
+        }
+    </script>
+
+</head>
+<body>
+<input type="button" value='获取段子' id="btn"
+       onclick="getInfo()"/>
+<div id="mydiv"></div>
+</body>
+</html>

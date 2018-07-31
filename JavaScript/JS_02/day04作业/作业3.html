@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>平方根求和</title>
+     <script type="text/javascript">
+        function sum() {
+            var x=document.getElementById("a").value;
+            var y=document.getElementById("b").value;
+
+            var mysum=function (aa,bb){
+                return Math.sqrt(aa)+Math.sqrt(bb);
+            };
+            document.getElementById("c").value=mysum(x,y);
+        }
+    </script>
+</head>
+<body>
+<!--3.请编写一个函数，功能为：可以接收两个数字和一个函数，
+  使用接收到的函数计算两个数字的平方根的和。-->
+<input type="text" id="a">+
+<input type="text" id="b">
+<input type="button" onclick="sum()" value="=">
+<input type="text" id="c">
+</body>
+</html>

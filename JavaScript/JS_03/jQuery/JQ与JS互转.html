@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象与DOM对象互相转换</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var mydiv = document.getElementById('mydiv');
+            mydiv.innerHTML = '<h3>通过jQery对象添加的内容</h3>'
+        });
+
+        $(function () {
+            var mydiv2 = document.getElementById('mydiv2');
+            var $mydiv2 = $(mydiv2);  // 将DOM对象转换为jquery对象
+            // 通过jquery对象的html()方法设置内容
+            $mydiv2.html('<h3>通过jQery对象添加的内容</h3>');
+            $mydiv2[0].style.backgroundColor = 'red';
+        })
+
+    </script>
+</head>
+<body>
+<div id="mydiv"></div>
+<div id="mydiv2"></div>
+</body>
+</html>

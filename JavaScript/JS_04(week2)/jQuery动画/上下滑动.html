@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上下滑动方法</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript">
+	    $(function(){
+	    	var flag=true;
+	    	$("#info").click(function(){
+	    		// if(flag){
+	    		// 	$(this).next().slideUp(3000);
+	    		// }else{
+	    		// 	$(this).next().slideDown(3000);
+	    		// }
+	    		// flag=!flag;
+	    		$(this).next().slideToggle(5000);
+	    	});
+	    })
+	</script>
+</head>
+<body>
+	<h3 id="info" style="margin-bottom:0;width:200px;background-color: #cceeff"> jQuery简介
+	</h3>
+	<div style="width:200px;height:200px;background-color: yellow;">   jQuery是一个优秀的JavaScript库
+	</div>
+	<div style="width:200px;height:200px;background-color: blue"></div>
+</body>
+</html>

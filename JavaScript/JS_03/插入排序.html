@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入排序</title>
+    <script>
+        var array=[12,23,45,6,23,41,7,89];
+        function insertSorrt(numbers) {
+            for(var i=1;i<numbers.length;i++){
+                var data=numbers[i];  //获取指示灯数据
+                var j=i-1;  //紧挨着指示灯数据的前一个数据的索引
+                while(j>=0 && data<numbers[j]){
+                    numbers[j+1]=numbers[j]; //指示灯前面数据向后移动
+                    j--;  //指示灯前面的数据的索引减一
+                }
+                numbers[j+1]=data;
+                document.write("第" + i + "次插入排序结果："+array+'<br/>');
+                // document.write("第" + j + "次插入排序结果："+array+'<br/>'); //???
+            }
+            document.write('插入排序最终结果是：'+numbers);
+        }
+
+        insertSorrt(array);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

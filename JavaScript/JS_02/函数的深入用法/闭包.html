@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+    <script type="text/javascript">
+        function f1() {
+            var n=999;
+
+            function f2() {
+               alert(n)
+            }
+            return f2
+        }
+
+        alert(typeof f1()); //function
+        var result=f1();   // 不能直接使用f1()调用函数，必须将其赋值符变量调用
+        alert(typeof result); //function
+        result();   //999
+    </script>
+</head>
+<body>
+
+</body>
+</html>

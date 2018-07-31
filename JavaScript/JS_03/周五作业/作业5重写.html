@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击div移动内容</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#mydiv1').css({  //js对象css是key-value结构
+                'width': '200px',
+                'height': '200px',
+                'background-color': 'blue'
+            });
+            $('#mydiv2').css({  //js对象css是key-value结构
+                'width': '200px',
+                'height': '200px',
+                'background-color': 'red'
+            });
+            $('#mydiv1').click(function () {
+                var content = $(this).html();
+                $('#mydiv2').html(content)
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="mydiv1"><h4>上善若水</h4></div>
+<div id="mydiv2"></div>
+
+</body>
+</html>

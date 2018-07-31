@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框背景颜色改为黄色</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("input[type=checkbox]").wrap("<span></span>").parent().css("background-color","yellow");
+        });
+    </script>
+</head>
+<body>
+<input type="checkbox">1&emsp;
+<input type="checkbox">2&emsp;
+<input type="checkbox">3&emsp;
+<input type="checkbox">4&emsp;<br>
+<hr style="width:500px;margin-left: 0">
+<input type="checkbox">5&emsp;
+<input type="checkbox">6&emsp;
+<input type="checkbox">7&emsp;
+<input type="checkbox">8
+</body>
+</html>

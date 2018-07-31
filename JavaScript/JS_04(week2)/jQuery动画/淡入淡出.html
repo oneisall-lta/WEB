@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出效果</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#div1').css({
+                'width': '100px',
+                'height': '100px',
+                'background-color': 'yellow',
+                'border': '1px',
+                'margin': '0px',
+                'color': 'green'
+            });
+            $('#div2').css({
+                'width': '100px',
+                'height': '100px',
+                'background-color': 'blue',
+                'border': '1px',
+                'color':'orange'
+            });
+            var flag=true;
+            $('#info').click(function () {
+                if(flag){
+                  $(this).next().fadeOut(1000,function () { // 回调函数
+                      alert('淡出了！')
+                  });
+                }else{
+                    $(this).next().fadeIn(2000,function () {
+                        alert('淡入了！')
+                    });
+                }
+                flag=!flag;
+            })
+
+        })
+    </script>
+
+</head>
+<body>
+<h4 id="info">jquery简介</h4>
+<div id="div1">今天空调好冷啊！</div>
+<div id="div2">要被冻死啦！</div>
+</body>
+</html>
