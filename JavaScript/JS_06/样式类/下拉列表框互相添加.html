@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉列表框互添加</title>
+    <style type="text/css">
+        select {
+            width: 100px;
+            height: 300px;
+        }
+    </style>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#toRightBtn').click(function () {
+                $('select#leftSelect > option:selected').appendTo('select#rightSelect');
+            });
+            $('#toLeftBtn').click(function () {
+                $('select#rightSelect > option:selected').appendTo('select#leftSelect');
+            });
+            $('select#leftSelect').dblclick(function () {
+                $('option:selected',this).appendTo('select#rightSelect')  //this表示当前所选的被绑定双击事件的下拉列表框select对象
+            });
+            $('select#rightSelect').dblclick(function () {
+                $('option:selected',this).appendTo('select#leftSelect')
+            });
+        });
+
+    </script>
+</head>
+<body>
+<select multiple id="leftSelect">
+    <option value="apple">苹果</option>
+    <option value="mongo">芒果</option>
+    <option value="peach">桃子</option>
+    <option value="banana">香蕉</option>
+    <option value="watermelon">西瓜</option>
+</select>
+&emsp; &emsp; &emsp;
+<select multiple id="rightSelect"></select><br/>
+<input type="button" value=">>>" id="toRightBtn">
+&emsp; &emsp; &emsp;&emsp; &emsp;&emsp;
+<input type="button" value="<<<" id="toLeftBtn">
+
+</body>
+</html>

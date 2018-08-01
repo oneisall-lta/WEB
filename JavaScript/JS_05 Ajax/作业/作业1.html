@@ -17,11 +17,13 @@
                         // alert(typeof array);
                         var result='';
                         for(var index in array){
-                            var content=array[index]['text'];
-                            result+=content+'<br/>';
-                            result+='<hr/>';
+                            var text=array[index]['text'];
+                            // alert(typeof text);
+                            result+=text+'<br/>';
+                            result+="<hr/>";
                         }
-                        document.getElementById('mydiv').innerText=result;
+                        // document.getElementById('mydiv').innerText=result; //innerText无法识别换行和横线，只添加文本内容
+                        document.getElementById('mydiv').innerHTML=result;
                     }
                 }
             };
@@ -30,8 +32,7 @@
     </script>
 </head>
 <body>
-<input type="button" value='获取笑话'
-       onclick="getText()"/>
+<input type="button" value='获取笑话' onclick="getText()"/>
 <div id="mydiv"></div>
 </body>
 </html>
