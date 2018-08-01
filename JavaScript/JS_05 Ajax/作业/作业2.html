@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用jQuery实现Ajax加载网址图片到网页</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <style type="text/css">
+        img {
+            width: 200px;,
+            height: 200 px;
+        }
+    </style>
+    <script type="text/javascript">
+        function getURL() {
+            $.ajax({
+                method: 'get',
+                url: 'https://www.apiopen.top/meituApi',
+                data: {page: '1'},
+                success: function (data) {
+                    var array = data['data'];
+                    var result = '';
+                    for (var index in array) {
+                        var picurl = array[index]['url'];
+                        // console.log(result);
+                        result += "<img "+"src='" + picurl+"'>";
+                        console.log(result);
+                        // result += "<hr/>"
+                    }
+                    // console.log(result);
+                    $('#mydiv').append(result)
+                },
+                dataType: 'json',
+            })
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value='获取图片'
+       onclick="getURL()"/>
+<div id="mydiv"></div>
+
+</body>
+</html>
