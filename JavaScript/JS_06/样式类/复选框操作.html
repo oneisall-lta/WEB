@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框操作</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#all').click(function () {
+                $('input[type=checkbox]').prop('checked',true);
+            });
+            $('#allno').click(function () {
+                $('input[type=checkbox]').prop('checked',false);
+            });
+            $('#revbtn').click(function () {
+                $('input[type=checkbox]').each(function () {
+                    $(this).prop('checked',!$(this).prop('checked'));
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+电影：<input type="checkbox" name="hobby" value="movie"/>&ensp;
+音乐：<input type="checkbox" name="hobby" value="music"/>&ensp;
+美食：<input type="checkbox" name="hobby" value="food"/>&ensp;
+运动：<input type="checkbox" name="hobby" value="sport"/>&ensp;
+读书：<input type="checkbox" name="hobby" value="read"/><br/>
+<input type="button" value="全选" id="all">
+<input type="button" value="全不选" id="allno">
+<input type="button" value="反选" id="revbtn">
+
+</body>
+</html>
