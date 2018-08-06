@@ -11,7 +11,7 @@
             var email=document.getElementById('email');
             if(username.value==''){
                 alert('用户名不能为空！');
-                return false;
+                return false; // return false 来阻止提交
             }
             if(pwd.value.length<6){
                 alert('密码不能小于6位');

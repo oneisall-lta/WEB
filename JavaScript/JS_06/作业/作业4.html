@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时实显示</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#a1').keyup(function () {
+                var content = $('#a1').val();
+                // alert(content);
+                $('#mydiv').html(content);
+            })
+        })
+    </script>
+</head>
+<body>
+请输入文字:<input type="text" id="a1">
+<div id="mydiv" style="border: 1px;width: auto;height: auto;background-color:lightgoldenrodyellow;"></div>
+</body>
+</html>

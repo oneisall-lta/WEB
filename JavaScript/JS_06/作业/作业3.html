@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('form').submit(function (evt) {
+                var uName=$('#user').val();
+                var pwd=$('#pwd').val();
+                if(uName==''){
+                    alert('用户名不能为空！');
+                    return false
+                    // evt.preventDefault();  //return false也可以阻止事件和函数运行；preventDefault不阻止函数运行，只阻止事件
+                }else{
+                    if(pwd.length<6){
+                        alert('密码不能小于6位！请重新输入');
+                        // evt.preventDefault();  //或者return false
+                        return false
+                    }else{
+                        alert('注册成功！')
+                    }
+                }
+                return true  //必须返回true才可以提交
+            })
+        })
+    </script>
+</head>
+<body>
+<form action="http://www.xiaohuar.com/" method="post">
+    用户名：<input type="text" name="username" id="user"><br/>
+    密&emsp;码：<input type="password" name="pwd" id="pwd"><br/>
+    <input type="submit" value="提交">
+</form>
+
+
+</body>
+</html>

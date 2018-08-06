@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击行变色</title>
+    <style type="text/css">
+        .evenClass{
+            background-color: lightblue;
+        }
+        .oddClass{
+            background-color: whitesmoke;
+        }
+         .highlight{
+            background-color: red;
+        }
+        /*highlight最后加载，与oddClass同为类选择器，后加载的为最终显示效果；若将highlight放在evenClass上显示结果不一样*/
+    </style>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // $('tbody tr:even').each(function () {
+            //     $(this).addClass('evenClass')
+            // });
+            $('tbody tr:even').css('background-color','pink');
+
+            // $('tbody tr:odd').each(function () {
+            //     $(this).addClass('oddClass')
+            // });
+            // $('tbody tr:odd').css('background-color','lightblue');
+            $('tbody tr:odd').addClass('oddClass');
+
+            $('tbody tr').click(function () {
+                $(this).addClass('highlight').siblings().
+                removeClass('highlight').end().find('input:radio').prop('checked',true);
+                //jQuery(对象)的当前行对象和兄弟对象，以及孙子对象及其属性设置;连续调用的基础是每次都返回jQuer对象
+            })
+        })
+    </script>
+</head>
+<body>
+<table style="border: 1px solid blue">
+    <thead>
+    <tr>
+        <th>选中状态</th>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>成绩</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="radio" name="state"></td>
+        <td>1</td>
+        <td>小明</td>
+        <td>男</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="state"></td>
+        <td>2</td>
+        <td>小花</td>
+        <td>女</td>
+        <td>89</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="state"></td>
+        <td>3</td>
+        <td>小李</td>
+        <td>男</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="state"></td>
+        <td>4</td>
+        <td>小兰</td>
+        <td>女</td>
+        <td>99</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奇偶行变色</title>
+     <style type="text/css">
+        .evenClass{
+            background-color: lightblue;
+        }
+        .oddClass{
+            background-color: whitesmoke;
+        }
+         .highlight{
+            background-color: lightseagreen;
+        }
+     </style>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('tbody tr:even').addClass('evenClass');
+            $('tbody tr:odd').addClass('oddClass');
+            $("tbody tr:contains('王五')").addClass('highlight')
+        })
+
+    </script>
+
+</head>
+<body>
+<table style="border: 1px solid blue">
+    <thead>
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>成绩</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>小明</td>
+        <td>男</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>小花</td>
+        <td>女</td>
+        <td>89</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>王五</td>
+        <td>男</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>小兰</td>
+        <td>女</td>
+        <td>99</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

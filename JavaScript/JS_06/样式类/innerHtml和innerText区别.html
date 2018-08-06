@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHtml和innerText区别</title>
+</head>
+<body>
+    <div id="a1">中午吃啥？<p>空调好冷啊!!!</p></div>
+    <script>
+        var content=document.getElementById('a1');
+        alert(content.innerText); //弹出后会写入到网页中
+        //中午吃啥？
+        //空调好冷啊!!!
+        alert(content.innerHTML);
+        //中午吃啥？<p>空调好冷啊!!!</p>
+        alert(content.outerText);
+        //中午吃啥？
+        //空调好冷啊!!!
+        alert(content.outerHTML);
+        //<div id="a1">中午吃啥？<p>空调好冷啊!!!</p></div>
+    </script>
+<!--innerHTML是符合W3C标准的属性，而innerText只适用于IE浏览器（现在也适应chrome浏览器）-->
+<!--innerHTML指的是从对象的起始位置到终止位置的全部内容,包括Html标签。
+innerText指的是从起始位置到终止位置的内容,但它去除Html标签。-->
+</body>
+</html>

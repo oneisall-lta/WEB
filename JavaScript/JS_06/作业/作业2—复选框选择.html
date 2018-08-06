@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框选择</title>
+    <script type="text/javascript" src="/WEB/JavaScript/js/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $('#allandno').change(function () {
+                var ischecked=$(this).prop('checked'); //判断状态
+                // alert(ischecked);
+                $('input[name=hobby]:checkbox').prop('checked',ischecked);
+                $('span').css('color','black');
+                if(ischecked){
+                    $('span#allspan').css('color','red')
+                }else {
+                    $('span#nospan').css('color','red')
+                }
+            });
+            $('input#revall').change(function () {
+                if($(this).prop('checked')){
+                    $('input[name=hobby]:checkbox').each(function () {
+                        $(this).prop('checked',false)
+                    })
+                }
+                
+            })
+
+        })
+    </script>
+</head>
+<body>
+    运动:<input type="checkbox" name="hobby" value="sport"/>&emsp;
+    读书:<input type="checkbox" name="hobby" value="read"/>&emsp;
+    美食：<input type="checkbox" name="hobby" value="food"/>&ensp;
+    游泳:<input type="checkbox" name="hobby" value="swim"><br>
+    <span id="allpan">全选</span>/<span id="nospan">全不选</span>:<input type="checkbox" id="allandno">&ensp;
+    反选:<input type="checkbox" id="revall">
+</body>
+</html>
